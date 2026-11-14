@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eaf7ff"><title>Baby Shower de Andrew Eithan</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:18px 12px 36px;background:linear-gradient(180deg,#f4fbff,#e7f5ff);font-family:Arial,sans-serif;color:#24506d;text-align:center}
+main{max-width:620px;margin:auto}.art{position:relative;width:100%;line-height:0;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px #4a8bb52b}.invite{display:block;width:100%;height:auto}
+.hot{position:absolute;display:block;z-index:2;background:transparent;border-radius:24px; -webkit-tap-highlight-color:transparent}
+/* Áreas táctiles colocadas sobre los tres botones dibujados en la invitación */
+.rsvp{left:3.5%;top:77.5%;width:29.1%;height:10%}.baby{left:34.2%;top:77.5%;width:31.3%;height:10%}.map{left:67.2%;top:77.5%;width:30.5%;height:10%}
+.controls{display:flex;flex-direction:column;gap:12px;margin:18px auto 0;max-width:460px}button,.link{border:0;border-radius:999px;padding:14px 18px;background:#fff;color:#23618c;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 3px 12px #5489a52b;cursor:pointer}button{background:#d8efff}.note{font-size:13px;color:#64849a;margin-top:4px}
+</style></head><body><main>
+<div class="art"><img class="invite" src="invitacion.png" alt="Invitación al baby shower de Andrew Eithan">
+<a class="hot rsvp" href="https://whocan.org/vote/baby-shower-de-andrew-eithan-bdn" target="_blank" rel="noopener" aria-label="Confirmar asistencia"></a>
+<a class="hot baby" href="https://baby-list-andrew-eithan-61e5c.web.app/" target="_blank" rel="noopener" aria-label="Ver Baby List"></a>
+<a class="hot map" href="https://www.google.com/maps?q=-11.9492827,-77.0570359&entry=gps" target="_blank" rel="noopener" aria-label="Ver ubicación en Google Maps"></a>
+</div>
+<div class="controls"><button id="play" type="button">▶ Reproducir música</button>
+<p class="note">Toca los botones de la invitación para abrir los enlaces. Pulsa reproducir para escuchar la canción.</p>
+<audio id="song" preload="none"><source src="musica.mp3" type="audio/mpeg"></audio></div></main>
+<script>
+const audio=document.getElementById('song'),btn=document.getElementById('play');
+btn.addEventListener('click',async()=>{if(audio.paused){try{await audio.play();btn.textContent='❚❚ Pausar música'}catch(e){btn.textContent='No se pudo reproducir; vuelve a tocar'}}else{audio.pause();btn.textContent='▶ Reproducir música'}});
+audio.addEventListener('ended',()=>btn.textContent='▶ Reproducir música');
+</script></body></html>
